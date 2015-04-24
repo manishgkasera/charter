@@ -1,5 +1,8 @@
 require "charter/version"
+require "charter/chart"
 
 module Charter
-  # Your code goes here...
+  def self.draw(*args)
+    Chart.draw(*args)
+  end
 end

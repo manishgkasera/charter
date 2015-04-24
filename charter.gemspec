@@ -6,11 +6,11 @@ require 'charter/version'
 Gem::Specification.new do |spec|
   spec.name          = "charter"
   spec.version       = Charter::VERSION
-  spec.authors       = ["manishk"]
-  spec.email         = ["manishk@infibeam.net"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.authors       = ["Manish Kasera"]
+  spec.email         = ["manishgkasera@gmail.com"]
+  spec.summary       = %q{Google chart made simple}
+  spec.description   = %q{Ruby interface to google charts}
+  spec.homepage      = "https://github.com/manishgkasera/charter"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
