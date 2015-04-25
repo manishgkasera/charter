@@ -14,21 +14,12 @@ class Charter::Chart
       def script(data, options)
 <<SCRIPT
 <script>
-  if(typeof google === 'undefined'){
-    var scr = document.createElement("script");
-    scr.setAttribute("src",'//www.google.com/jsapi?autoload={"modules":[{"name":"visualization","version":"1","packages":["corechart"],"callback":"charter"}]}');
-    document.head.appendChild(scr);
-  }else{
-    charter();
-  }
-  function charter(){
-    google.load('visualization', '1', {packages: ['corechart']});
-    google.setOnLoadCallback(function chart(){
-      var data = new google.visualization.DataTable(#{convert(data, options[:header])});
-      (new google.visualization.#{options[:type]}(document.getElementById('#{options[:container]}')))
-      .draw(data, #{(options[:options] || {}).to_json});
-    });
-  }
+  google.load('visualization', '1', {packages: ['corechart']});
+  google.setOnLoadCallback(function chart(){
+    var data = new google.visualization.DataTable(#{convert(data, options[:header])});
+    (new google.visualization.#{options[:type]}(document.getElementById('#{options[:container]}')))
+    .draw(data, #{(options[:options] || {}).to_json});
+  });
 </script>
 SCRIPT
       end
